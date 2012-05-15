@@ -1,0 +1,30 @@
+# vim:ft=txt
+
+#. Proximity analysis - some cells can be eliminated because they are not
+reachable (also consider that white cells of certain islands interfere
+with the extent of different islands).
+
+#. A straight row or column of black cells can be tested for black cells in
+its middle which will place two white cells and so one can conclude that
+they are white.
+
+#. If you have something like:
+
+   |[B][G][B]
+   |[G][G][B]
+   -----------------
+
+Then it is evident that the upper [G] (Gray/Unknown) has to be white, or else
+the lower [G]s will also all be black.
+
+#. Cells between two islands (either diagonally or in a one-cell spacing) must
+be black, or else the two islands will be joined.
+
+#. Filling-style strategy: if past a certain geometery (that is within the
+limits of its number), an island can only expand into one cell, then that
+cell will be white.
+
+#. If an Island reaches certain points that reaching them consumes all of its
+number, then its white edge points can be marked with black in the opposite
+direction to its extent.
+
