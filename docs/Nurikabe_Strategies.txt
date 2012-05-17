@@ -28,3 +28,8 @@ cell will be white.
 number, then its white edge points can be marked with black in the opposite
 direction to its extent.
 
+#. One cannot have a loop or a path of white cells (including diagonal ones)
+from one edge of the board to the other, which contains black cells inside,
+because this will prevent the black cells from being contiguous.
+    - Alternative phrasing: a polymino of black cells that can only expand into
+    a single grey cell will expand there.
