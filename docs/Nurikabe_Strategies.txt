@@ -33,3 +33,16 @@ from one edge of the board to the other, which contains black cells inside,
 because this will prevent the black cells from being contiguous.
     - Alternative phrasing: a polymino of black cells that can only expand into
     a single grey cell will expand there.
+
+#. Sometimes extending an $N -1 island to a white cell in proximity to one of
+its cells will cause the remaining cells to form a 4*4 black region. As
+a result, this white cell must be black.
+
+#. Often when there's a situation like:
+
+[W][G][G]
+[B][B][B]
+
+We can see that the island should expand into the leftmost gray/unknown cell 
+or else it will need to take a costly detour which will consume the rest of its
+number.
