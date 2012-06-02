@@ -24,7 +24,7 @@ be black, or else the two islands will be joined.
 limits of its number), an island can only expand into one cell, then that
 cell will be white.
 
-#. If an Island reaches certain points that reaching them consumes all of its
+#. If an Island reaches certain points which consume all of its
 number, then its white edge points can be marked with black in the opposite
 direction to its extent.
 
@@ -46,3 +46,25 @@ a result, this white cell must be black.
 We can see that the island should expand into the leftmost gray/unknown cell 
 or else it will need to take a costly detour which will consume the rest of its
 number.
+
+#. Islands that can expand in several different manners must mark all the 
+common black cells inflected by these ways in this way. For example:
+
++------
+|[2][G]
+|[G][G]
+
+The lower-right [G] cell must be black because it will be black whether the
+2 expands to the right or to the bottom.
+
+In addition, if we have:
+
+    x1 x2 x3 x4 
+y1     [B][B][B]
+y2  [B][4][W][B]
+y3  [B][G][W][B]
+y4     [G][G][B]
+
+The the 4-cell region can only expand into (x2,y3) or (x3,y4) so 
+[G](x2,y4) must be black.
+
