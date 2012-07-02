@@ -17,8 +17,8 @@ they are white.
 Then it is evident that the upper [G] (Gray/Unknown) has to be white, or else
 the lower [G]s will also all be black.
 
-#. Cells between two islands (either diagonally or in a one-cell spacing) must
-be black, or else the two islands will be joined.
+#. Cells between two islands (either diagonally or in a one-cell vertical
+or horiozntal spacing) must be black, or else the two islands will be joined.
 
 #. Filling-style strategy: if past a certain geometery (that is within the
 limits of its number), an island can only expand into one cell, then that
@@ -68,3 +68,6 @@ y4     [G][G][B]
 The the 4-cell region can only expand into (x2,y3) or (x3,y4) so 
 [G](x2,y4) must be black.
 
+#. If marking a cell as white will make it reachable only by one island,
+and as a result they will form a parly-diagonal loop of white cells, which
+will segment the black master region, then the cell must be black.
