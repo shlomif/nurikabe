@@ -43,11 +43,11 @@ a result, this white cell must be black.
 [W][G][G]
 [B][B][B]
 
-We can see that the island should expand into the leftmost gray/unknown cell 
+We can see that the island should expand into the leftmost gray/unknown cell
 or else it will need to take a costly detour which will consume the rest of its
 number.
 
-#. Islands that can expand in several different manners must mark all the 
+#. Islands that can expand in several different manners must mark all the
 common black cells inflected by these ways in this way. For example:
 
 +------
@@ -59,13 +59,13 @@ The lower-right [G] cell must be black because it will be black whether the
 
 In addition, if we have:
 
-    x1 x2 x3 x4 
+    x1 x2 x3 x4
 y1     [B][B][B]
 y2  [B][4][W][B]
 y3  [B][G][W][B]
 y4     [G][G][B]
 
-The the 4-cell region can only expand into (x2,y3) or (x3,y4) so 
+The the 4-cell region can only expand into (x2,y3) or (x3,y4) so
 [G](x2,y4) must be black.
 
 #. If marking a cell as white will make it reachable only by one island,
