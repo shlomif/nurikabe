@@ -71,3 +71,11 @@ The the 4-cell region can only expand into (x2,y3) or (x3,y4) so
 #. If marking a cell as white will make it reachable only by one island,
 and as a result they will form a parly-diagonal loop of white cells, which
 will segment the black master region, then the cell must be black.
+
+#. If we have something like:
+   x1  x2 x3
+y1 [2W][G][B]
+y2 [ G][G][B]
+
+The if [G](x1,y2) is white, then (x2,y1) and (x2,y2) will be black which
+will form a 2*2 region of black cells which is impossible.
