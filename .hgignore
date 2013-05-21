@@ -5,3 +5,7 @@ nurikabe-solver/Games-Nurikabe-Solver/MYMETA.json
 nurikabe-solver/Games-Nurikabe-Solver/MYMETA.yml
 nurikabe-solver/Games-Nurikabe-Solver/_build
 nurikabe-solver/Games-Nurikabe-Solver/blib
+
+syntax: regexp
+
+^nurikabe-solver/Games-Nurikabe-Solver/Games-Nurikabe-Solver-\d+\.\d+(?:/|\.tar\.gz$)
