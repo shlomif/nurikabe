@@ -14,6 +14,10 @@ my $builder = Test::Run::Builder->new(
     license             => 'mit',
     dist_author         => 'Shlomi Fish <shlomif@cpan.org>',
     dist_version_from   => 'lib/Games/Nurikabe/Solver.pm',
+    configure_requires =>
+    {
+        'Module::Build' => '0.36',
+    },
     build_requires => {
         'Test::Differences' => 0,
         'Test::More' => 0,

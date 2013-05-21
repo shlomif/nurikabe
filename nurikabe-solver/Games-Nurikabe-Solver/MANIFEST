@@ -29,4 +29,5 @@ t/pod-coverage.t
 t/pod.t
 t/solve1.t
 t/solve-refactor.t
+t/style-trailing-space.t
 META.json
