@@ -12,7 +12,6 @@ lib/Games/Nurikabe/Solver/Coords.pm
 lib/Games/Nurikabe/Solver/Island.pm
 lib/Games/Nurikabe/Solver/Move.pm
 lib/Games/Nurikabe/Solver.pm
-Makefile.PL
 MANIFEST
 META.yml
 README

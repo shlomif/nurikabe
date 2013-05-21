@@ -27,7 +27,6 @@ my $builder = Test::Run::Builder->new(
         'Class::XSAccessor' => 0,
     },
     add_to_cleanup      => [ 'Games-Nurikabe-Solver-*' ],
-    create_makefile_pl => 'traditional',
 );
 
 $builder->create_build_script();
