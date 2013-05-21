@@ -26,8 +26,8 @@ sub is_island_surround
     (
         map
         {
-        [ 
-            map { 
+        [
+            map {
             Games::Nurikabe::Solver::Cell->new(
                 { status => $NK_UNKNOWN }
                 )
@@ -54,8 +54,8 @@ sub is_island_surround
                 idx => 0,
                 order => scalar(@$white_cells),
                 known_cells =>
-                [ 
-                    map 
+                [
+                    map
                     {
                         $board->_new_coords( {y => $_->[0], x => $_->[1],} )
                     }

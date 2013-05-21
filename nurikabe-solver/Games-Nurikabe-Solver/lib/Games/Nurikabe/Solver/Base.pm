@@ -57,7 +57,7 @@ Gotta love dynamic languages like Perl 5.
 sub mk_accessors
 {
     my $package = shift;
-    return $package->mk_acc_ref([@_]); 
+    return $package->mk_acc_ref([@_]);
 }
 
 =head2 __PACKAGE__->mk_acc_ref([qw(method1 method2 method3)])
@@ -77,7 +77,7 @@ sub mk_acc_ref
 package $package;
 
 Class::XSAccessor->import(
-    accessors => \$mapping,            
+    accessors => \$mapping,
 );
 EOF
 
@@ -103,7 +103,7 @@ sub add_offset
 
     return $self->_new_coords(
         {
-            y => $coords->y + $offset->[0], 
+            y => $coords->y + $offset->[0],
             x => $coords->x + $offset->[1],
         }
     );
@@ -162,7 +162,7 @@ L<http://svn.berlios.de/svnroot/repos/fc-solve/nurikabe-solver/trunk/>
 
 Copyright 2008 Shlomi Fish, all rights reserved.
 
-This program is released under the following license: MIT/X11 Licence. 
+This program is released under the following license: MIT/X11 Licence.
 
 =cut
 

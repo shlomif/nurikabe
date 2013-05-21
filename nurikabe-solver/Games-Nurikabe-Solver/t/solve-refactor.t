@@ -28,7 +28,7 @@ Width=2 Height=2
 []  []
 EOF
 
-    my $board = 
+    my $board =
         Games::Nurikabe::Solver::Board->load_from_string(
             $string_representation
         );
@@ -36,7 +36,7 @@ EOF
     {
         my $moves = $board->_solve_using(
             {
-                name => "surround_island", 
+                name => "surround_island",
                 params => {},
             }
         );

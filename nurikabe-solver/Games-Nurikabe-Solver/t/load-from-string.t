@@ -28,7 +28,7 @@ Width=5 Height=5
 [] [6] [] [] []
 EOF
 
-    my $board = 
+    my $board =
         Games::Nurikabe::Solver::Board->load_from_string(
             $string_representation
         );
@@ -71,10 +71,10 @@ EOF
     # TEST
     eq_or_diff (
         _island_cells_dump($board->get_island(0)),
-        [[0,3]], 
+        [[0,3]],
         "known_cells of island 0",
     );
-    
+
     # TEST
     is ($board->get_island(2)->idx(), 2, "idx() of island 2 is 2");
 
@@ -84,7 +84,7 @@ EOF
     # TEST
     eq_or_diff (
         _island_cells_dump($board->get_island(2)),
-        [[3,3]], 
+        [[3,3]],
         "known_cells of island 2",
     );
 

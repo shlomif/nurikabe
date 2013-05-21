@@ -19,7 +19,7 @@ Width=5 Height=5
 [] [6] [] [] []
 EOF
 
-    my $board = 
+    my $board =
         Games::Nurikabe::Solver::Board->load_from_string(
             $string_representation
         );

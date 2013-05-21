@@ -170,7 +170,7 @@ sub _init
 
 =head2 $class->load_from_string($string)
 
-Loads from the string. A string is something like 
+Loads from the string. A string is something like
 
     Width=5 Height=5
     [] [] [] [1] []
@@ -185,7 +185,7 @@ sub load_from_string
 {
     my $class = shift;
     my $string = shift;
-    
+
     if ($string !~ m{\AWidth=(\d+)\s*Height=(\d+)\n}gms)
     {
         die "Cannot read string";
@@ -222,7 +222,7 @@ sub load_from_string
                 my $num_cells = $cell_contents;
                 my $index = scalar(@islands);
 
-                push @islands, 
+                push @islands,
                     Games::Nurikabe::Solver::Island->new(
                         {
                             idx => $index,
@@ -291,7 +291,7 @@ sub get_island
 =head2 \@coords = $self->border_exclude_coords()
 
 Returns the coordinates of the cells directly outside the board's borders so
-they can be excluded. 
+they can be excluded.
 
 =cut
 
@@ -429,7 +429,7 @@ sub _solve_using_surround_island
             {
                 $self->_mark_as_black($coords);
             }
-            
+
             $self->_add_move(
                 {
                     reason => "surround_island_when_full",
@@ -531,16 +531,16 @@ sub _adj_whites_handle_shape
     my $offset = $shape->{'offset'};
     my $blacks_offsets = $shape->{'blacks'};
 
-    # Other [X,Y] 
+    # Other [X,Y]
     my $other_coords = $self->add_offset($c, $offset);
-    
+
     if (! $self->_is_in_bounds($other_coords))
     {
         return;
     }
 
     my $other_cell = $self->get_cell($other_coords);
-    
+
     if ($other_cell->not_same_island($cell))
     {
         # Bingo.
@@ -624,7 +624,7 @@ sub _solve_using_distance_from_islands
 {
     my $self = shift;
 
-    # Mark non-traversable cells - these are cells that are too close 
+    # Mark non-traversable cells - these are cells that are too close
     # to a white island cell.
     foreach my $island (@{$self->_islands()})
     {
@@ -669,7 +669,7 @@ sub _solve_using_fully_expand_island
 {
     my $self = shift;
 
-    # Mark non-traversable cells - these are cells that are too close 
+    # Mark non-traversable cells - these are cells that are too close
     # to a white island cell.
     foreach my $island (@{$self->_islands()})
     {
@@ -768,7 +768,7 @@ sub _solve_using_expand_black_regions
             {
                 # Perform a BrFS scan on the cell to find all adjacent black
                 # cells and the unknown cells that are adjacent to them.
-                
+
                 my @queue = ($cell_coords);
 
                 my %adjacent_unknowns;
@@ -818,7 +818,7 @@ sub _solve_using_expand_black_regions
                 # may well as be white.
                 if (
                     ($cells_count < $self->_found_totals->{$NK_BLACK})
-                        && 
+                        &&
                     (@k == 1)
                 )
                 {
@@ -912,7 +912,7 @@ L<http://svn.berlios.de/svnroot/repos/fc-solve/nurikabe-solver/trunk/>
 
 Copyright 2008 Shlomi Fish, all rights reserved.
 
-This program is released under the following license: MIT/X11 Licence. 
+This program is released under the following license: MIT/X11 Licence.
 
 =cut
 

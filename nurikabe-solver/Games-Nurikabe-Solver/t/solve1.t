@@ -32,7 +32,7 @@ Width=2 Height=2
 []  []
 EOF
 
-    my $board = 
+    my $board =
         Games::Nurikabe::Solver::Board->load_from_string(
             $string_representation
         );
@@ -50,7 +50,7 @@ EOF
     is ($board->_num_found_cells($NK_BLACK), 0, "Found 0 Black Cells");
 
     # TEST
-    is ($board->_num_found_cells($NK_UNKNOWN), 3, 
+    is ($board->_num_found_cells($NK_UNKNOWN), 3,
         "Currently have 3 unknown cells"
     );
 
@@ -89,7 +89,7 @@ EOF
         is ($board->_num_found_cells($NK_BLACK), 2, "Found 2 Black Cells");
 
         # TEST
-        is ($board->_num_found_cells($NK_UNKNOWN), 1, 
+        is ($board->_num_found_cells($NK_UNKNOWN), 1,
             "Currently have 1 unknown cells"
         );
     }
@@ -122,7 +122,7 @@ EOF
     my $string_representation = <<"EOF";
 Width=3 Height=3
 [] []  []
-[] [1] [] 
+[] [1] []
 [] []  []
 EOF
 
@@ -175,7 +175,7 @@ EOF
         );
 
         my $m;
-        
+
         $m = shift(@$moves);
         # TEST
         is ($m->reason(), "surrounded_by_blacks", "reason for 0 is surrounded_by_blacks");
@@ -194,7 +194,7 @@ EOF
         # TEST
         eq_or_diff(
             verdict_cells($m, $NK_BLACK),
-            [[0,2]], 
+            [[0,2]],
             "Verdicted cells for 1 is OK.",
         );
 
@@ -205,7 +205,7 @@ EOF
         # TEST
         eq_or_diff(
             verdict_cells($m, $NK_BLACK),
-            [[2,0]], 
+            [[2,0]],
             "Verdicted cells for 2 is OK.",
         );
 
@@ -216,7 +216,7 @@ EOF
         # TEST
         eq_or_diff(
             verdict_cells($m, $NK_BLACK),
-            [[2,2]], 
+            [[2,2]],
             "Verdicted cells for 3 is OK.",
         );
 
@@ -523,7 +523,7 @@ sub _init
 sub in_black
 {
     my ($self, $coords) = @_;
-    
+
     return (any { $_->y == $coords->[0] && $_->x == $coords->[1] }
            @{$self->move->get_verdict_cells($NK_BLACK)})
        ;
@@ -532,7 +532,7 @@ sub in_black
 sub in_white
 {
     my ($self, $coords) = @_;
-    
+
     return (any { $_->y == $coords->[0] && $_->x == $coords->[1] }
            @{$self->move->get_verdict_cells($NK_WHITE)})
        ;
@@ -550,7 +550,7 @@ sub multi_in_white
     }
     else
     {
-        return 'Coordinates [ ' . 
+        return 'Coordinates [ ' .
             join(" , ", map { '['.join(',',@$_) . ']' } @not_found)
             . ' ] were not marked as white in this move.'
             ;

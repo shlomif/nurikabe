@@ -82,9 +82,9 @@ sub not_same_island
     my $self = shift;
     my $other = shift;
 
-    return 
+    return
     (
-           $self->belongs_to_island() 
+           $self->belongs_to_island()
         && ($self->island() != $other->island())
     );
 }
@@ -127,7 +127,7 @@ sub can_be_marked_by_island
     my ($self, $island) = @_;
 
     if (($self->status() eq $NK_BLACK)
-        || (defined($self->island()) 
+        || (defined($self->island())
             && $self->island() != $island->idx()
         )
     )
@@ -214,7 +214,7 @@ L<http://svn.berlios.de/svnroot/repos/fc-solve/nurikabe-solver/trunk/>
 
 Copyright 2008 Shlomi Fish, all rights reserved.
 
-This program is released under the following license: MIT/X11 Licence. 
+This program is released under the following license: MIT/X11 Licence.
 
 =cut
 

@@ -83,7 +83,7 @@ L<http://svn.berlios.de/svnroot/repos/fc-solve/nurikabe-solver/trunk/>
 
 Copyright 2008 Shlomi Fish, all rights reserved.
 
-This program is released under the following license: MIT/X11 Licence. 
+This program is released under the following license: MIT/X11 Licence.
 
 =cut
 
