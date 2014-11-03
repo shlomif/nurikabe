@@ -175,7 +175,7 @@ sub OnInit
         $frame,
         -1,
         wxDefaultPosition(),
-        wxDefaultSize(),
+        Wx::Size->new(200,380),
         [qw(
             surround_island
             surrounded_by_blacks
@@ -192,7 +192,7 @@ sub OnInit
 
     $self->{frame} = $frame;
 
-    EVT_LISTBOX_DCLICK($frame->{list}, wxID_ANY(), sub {
+    Wx::Event::EVT_LISTBOX($frame->{list}, wxID_ANY(), sub {
             my $list = shift;
             my $event = shift;
 
