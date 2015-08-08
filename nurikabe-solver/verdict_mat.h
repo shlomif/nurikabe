@@ -10,7 +10,7 @@ enum NK_SOLVE_VERDICT
     NK_SOLVE_VERDICT__BLACK = 2,
 };
 
-typedef enum 
+typedef enum
 {
     NK_SOLVE_ERROR__SUCCESS = 0,
     NK_SOLVE_ERROR__ALLOC_FAILED,

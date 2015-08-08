@@ -3,9 +3,9 @@
 ;;; http://testanything.org/
 ;;;
 ;;; Very ad-hoc so far.
-;;; 
+;;;
 ;;; This code is distributed under the MIT/X11 license:
-;;; 
+;;;
 ;;; http://www.opensource.org/licenses/mit-license.php
 ;;;
 ;;; Copyright by Shlomi Fish, 2008

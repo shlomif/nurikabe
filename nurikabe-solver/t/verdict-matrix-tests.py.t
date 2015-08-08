@@ -21,7 +21,7 @@ verdict_mat_free = nk_solve.nk_solve_verdict_matrix_free
 class Mat:
     def __init__(self):
         self.matrix = c_void_p()
-    
+
     def create(self, height, width):
         return nk_solve.nk_solve_verdict_matrix_create(
                 c_int(height), c_int(width), byref(self.matrix)
@@ -50,8 +50,8 @@ def test_create_and_free():
     m = Mat()
     # TEST
     eq_ok (
-            m.create(10, 5), 
-            NK_SOLVE_ERROR__SUCCESS, 
+            m.create(10, 5),
+            NK_SOLVE_ERROR__SUCCESS,
             "nk_solve_verdict_matrix_create correct error value"
             )
 
@@ -71,8 +71,8 @@ def test_off_by_one():
     m = Mat()
     # TEST
     eq_ok (
-            m.create(1, 3), 
-            NK_SOLVE_ERROR__SUCCESS, 
+            m.create(1, 3),
+            NK_SOLVE_ERROR__SUCCESS,
             "off_by_one create"
             )
 
@@ -120,7 +120,7 @@ def test_set_and_get():
             NK_SOLVE_ERROR__X_OUT_OF_BOUNDS,
             "X is out of bounds",
         )
-    
+
     # TEST
     eq_ok (
             m.set(-1,2, NK_SOLVE_VERDICT__BLACK),
@@ -188,7 +188,7 @@ def test_set_and_get():
             m.get(-1,2),
             (NK_SOLVE_ERROR__Y_OUT_OF_BOUNDS, -1),
             "get (-1,2) out of y bounds")
- 
+
     # TEST
     eq_ok (
             m.get(3,100),
